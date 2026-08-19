@@ -77,10 +77,13 @@ function main() {
     var h = context.canvas.height;  // as set in html
     var imagedata = context.createImageData(w,h);
  
-    // Draw a rectangle with pixels
-    var c = new Color(0,0,0,255); // the color at the pixel: black opaque
-    for (var x=50; x<100; x++) 
-        for (var y=50; y<75; y++) {
+    // Draw a large purple square in the center of the canvas
+    var c = new Color(128,0,128,255);
+    var squareSize = 150;
+    var startX = Math.floor((w - squareSize) / 2);
+    var startY = Math.floor((h - squareSize) / 2);
+    for (var x=startX; x<startX+squareSize; x++)
+        for (var y=startY; y<startY+squareSize; y++) {
             drawPixel(imagedata,x,y,c);
             // console.log("draw at " +x+ " " +y);
         }
